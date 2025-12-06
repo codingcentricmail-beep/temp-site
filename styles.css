@@ -1,0 +1,130 @@
+/* General */
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #fff;
+  color: #000;
+}
+
+.section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid black;
+}
+
+/* Mobile Nav - simple top bar */
+.header-box {
+  width: 100%;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid black;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+
+/* Hidden desktop nav until toggle */
+.nav-links {
+  display: none;
+  flex-direction: column;
+  background: #fff;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.nav-links a {
+  padding: 10px 0;
+  color: black;
+  text-decoration: none;
+}
+
+/* Hamburger icon */
+.hamburger {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* DESKTOP BREAKPOINT */
+@media (min-width: 780px) {
+
+  body {
+    padding-top: 120px; /* space for floating nav */
+  }
+
+  /* Floating box nav centered */
+  .header-box {
+    width: 70%;
+    margin: 20px auto;
+    border: 2px solid black;
+    border-radius: 12px;
+    position: sticky;
+    top: 20px;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex !important;
+    flex-direction: row;
+    position: static;
+    border: none;
+    gap: 20px;
+  }
+
+  .nav-links a {
+    padding: 0;
+  }
+}
+/* Hamburger icon */
+.hamburger {
+  display: block;
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 50; /* stays above menu */
+  background: transparent;
+  border: none;
+}
+
+/* Mobile Menu Hidden */
+.nav-links {
+  display: none;
+  flex-direction: column;
+  background: #fff;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  border: 1px solid black;
+  padding: 12px;
+  z-index: 40; /* under hamburger */
+}
+
+.nav-links a {
+  padding: 10px 0;
+  color: black;
+  text-decoration: none;
+}
+
+/* DESKTOP */
+@media (min-width: 780px) {
+  .hamburger {
+    display: none;
+  }
+  
+  .nav-links {
+    display: flex !important;
+    flex-direction: row;
+    position: static;
+    border: none;
+    gap: 20px;
+  }
+}
